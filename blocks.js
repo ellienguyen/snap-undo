@@ -7904,7 +7904,7 @@ TextSlotMorph.prototype.init = function (
     this.oldContentsExtent = contents.extent();
     this.isNumeric = isNumeric || false;
     this.isReadOnly = isReadOnly || false;
-    this.minWidth = 0; // can be chaged for text-type inputs ("landscape")
+    this.minWidth = 0; // can be changed for text-type inputs ("landscape")
     this.constant = null;
 
     InputSlotMorph.uber.init.call(this);
