@@ -3515,8 +3515,9 @@ BlockMorph.prototype.destroy = function () {
     this.allComments().forEach(function (comment) {
         comment.destroy();
     });
-    
-    if (this.topBlock() === this && this.activeProcess()) {
+
+    if (!this.parent || !this.parent.topBlock
+            && this.activeProcess()) {
         this.activeProcess().stop();
     }
 
