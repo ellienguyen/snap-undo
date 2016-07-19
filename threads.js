@@ -2467,7 +2467,7 @@ Process.prototype.reportLetter = function (idx, string) {
         return '';
     }
     var i = +(idx || 0),
-        str = (string || '').toString();
+        str = isNil(string) ? '' : string.toString();
     return str[i - 1] || '';
 };
 
@@ -2476,7 +2476,7 @@ Process.prototype.reportStringSize = function (data) {
         return data.length();
     }
 
-    return (isNil(data) ? '' : data).toString().length;
+    return isNil(data) ? 0 : data.toString().length;
 };
 
 Process.prototype.reportUnicode = function (string) {
